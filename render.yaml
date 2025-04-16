@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: ben-whittaker-bot
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TZ
+        value: Africa/Nairobi
+      - key: PORT
+        value: 8080
